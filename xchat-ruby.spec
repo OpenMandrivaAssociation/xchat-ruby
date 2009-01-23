@@ -1,6 +1,6 @@
 %define name	xchat-ruby
-%define version	1.1
-%define release	%mkrel 11
+%define version	1.2
+%define release	%mkrel 1
 
 # usually ruby binary compatibility only breaks between minor releases?
 %define min_ruby_version	1.8
@@ -15,7 +15,7 @@ License:	GPL
 URL:		http://xchat-ruby.sourceforge.net/
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 
-Source:		%{name}-src-%{version}.tar.bz2
+Source:		%{name}-%{version}-src.tar.bz2
 Patch0:		%{name}-global-install.patch
 BuildRequires:	ruby-devel >= %{min_ruby_version}
 BuildConflicts:	ruby-devel >= %{max_ruby_version}
@@ -27,7 +27,7 @@ Requires:	xchat
 Provides Ruby scripting capability to XChat.
 
 %prep
-%setup -q -n %{name}-src-%{version}
+%setup -q -n %{name}-%{version}-src
 %patch0
 
 %build
@@ -44,7 +44,7 @@ ruby -e 'puts $LOAD_PATH.join("\n")' > $RPM_BUILD_ROOT%{_libdir}/xchat/plugins/r
 rm -fr $RPM_BUILD_ROOT
 
 
-%files 
+%files
 %defattr(-,root,root)
 %doc README COPYING samples ChangeLog
 %{_libdir}/xchat/plugins/ruby.so
