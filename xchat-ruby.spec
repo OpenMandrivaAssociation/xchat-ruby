@@ -1,6 +1,6 @@
 %define name	xchat-ruby
 %define version	1.2
-%define release	%mkrel 1
+%define release	%mkrel 2
 
 # usually ruby binary compatibility only breaks between minor releases?
 %define min_ruby_version	1.8
