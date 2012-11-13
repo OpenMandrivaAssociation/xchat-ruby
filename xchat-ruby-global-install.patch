@@ -1,0 +1,19 @@
+--- src/xchat-ruby-plugin.rb.orig	2003-09-20 18:37:52.000000000 +0200
++++ src/xchat-ruby-plugin.rb	2003-09-20 18:39:59.000000000 +0200
+@@ -423,6 +423,16 @@
+             $LOAD_PATH.push line
+           end
+         end
++      rescue
++      end
++      envfile = "/usr/lib/xchat/plugins/rubyenv"
++      begin
++        File.open( envfile, "r" ) do |file|
++          file.each do |line|
++            line.chomp!
++            $LOAD_PATH.push line
++          end
++        end
+       rescue Exception => detail
+         puts "The ruby environment file '#{envfile}' could not be found."
+         puts "Ruby modules will not be able to access any extension modules."
