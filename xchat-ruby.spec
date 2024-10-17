@@ -12,7 +12,7 @@ Release:	%{release}
 Summary:	XChat Ruby plugin
 Group:		Networking/IRC
 License:	GPL
-URL:		http://xchat-ruby.sourceforge.net/
+URL:		https://xchat-ruby.sourceforge.net/
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 
 Source:		%{name}-%{version}-src.tar.bz2
