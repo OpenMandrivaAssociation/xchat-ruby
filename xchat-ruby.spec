@@ -17,6 +17,7 @@ Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 
 Source:		%{name}-%{version}-src.tar.bz2
 Patch0:		%{name}-global-install.patch
+BuildRequires:	make
 BuildRequires:	ruby-devel >= %{min_ruby_version}
 BuildConflicts:	ruby-devel >= %{max_ruby_version}
 Requires:	ruby >= %{min_ruby_version}
